@@ -1,0 +1,29 @@
+#%RAML 1.0
+title: Odoo System API
+description: This REST API provides methods to create, read and update information in Odoo for opportunities
+
+/opportunity:
+  get:
+    displayName: Get all opportunities
+    responses:
+      200:
+        body:
+          application/json:
+            properties:
+              "opp_status": string
+              "opp_id": number
+            example:
+              opp_status: hello
+              opp_id: 123345
+  /{id}:
+    get:
+      displayName: Retrieve an Opportunity with it's ID
+      responses:
+        200:
+          body:
+            application/json:
+              properties:
+                "opp_status": string
+              example:
+                opp_status: Good
+          #start just with the get ID, no field specifications
